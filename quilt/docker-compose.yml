@@ -1,0 +1,20 @@
+services:
+  minecraft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: minecraft-quilt
+    container_name: minecraft-quilt
+    stdin_open: true
+    tty: true
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./world:/app/server/world
+      - ./mods:/app/server/mods
+      - ./config:/app/server/config
+      - ./server.properties:/app/server/server.properties
+      - ./ops.json:/app/server/ops.json
+      - ./whitelist.json:/app/server/whitelist.json
+      - ./banned-ips.json:/app/server/banned-ips.json
+      - ./banned-players.json:/app/server/banned-players.json

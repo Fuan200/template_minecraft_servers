@@ -1,0 +1,9 @@
+config/
+mods/
+world/
+mods.zip
+ops.json
+server.properties
+whitelist.json
+Dockerfile
+docker-compose.yml
