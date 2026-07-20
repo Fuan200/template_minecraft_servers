@@ -12,4 +12,4 @@ COPY . /app/server/
 
 WORKDIR /app/server
 
-ENTRYPOINT ["java", "-Xms2G", "-Xmx4G", "-jar", "quilt-server-launch.jar", "nogui"]
+ENTRYPOINT ["java", "-Xms4096M", "-Xmx5632M", "-jar", "quilt-server-launch.jar", "nogui"]
