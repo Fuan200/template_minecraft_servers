@@ -33,23 +33,54 @@ cd fabric
 docker compose up -d --build
 ```
 
+### NeoForge
+
+```bash
+cd neoforge
+docker compose up -d --build
+```
+
+### Quilt
+
+```bash
+cd quilt
+docker compose up -d --build
+```
+
 The server listens on port `25565` by default.
 
 ## Managing The Server
 
-View logs:
+* View logs:
 
 ```bash
 docker compose logs -f
 ```
 
-Stop the server:
+* Attach to the server:
+
+```bash
+docker attach <name-of-container>
+```
+
+While attached, you can run Minecraft server commands directly, for example:
+
+```bash
+list
+say Server restart in 5 minutes
+whitelist list
+stop
+```
+
+To leave the attached console without stopping the container, press: `Ctrl + P` and `Ctrl + Q`
+
+* Stop the server:
 
 ```bash
 docker compose down
 ```
 
-Restart the server:
+* Restart the server:
 
 ```bash
 docker compose restart
@@ -83,9 +114,10 @@ Common files are mounted into the container so they can be edited directly from 
 - `config/`
 - `world/`
 
-For Forge, `user_jvm_args.txt` is also mounted and can be used to adjust JVM arguments.
+For Forge and NeoForge, `user_jvm_args.txt` is also mounted and can be used to adjust JVM arguments.
+For Fabric and Quilt you can modify the `ENTRYPOINT` line in the Dockerfile to adjust JVM arguments.
 
 ### Notes
 
-- Default Minecraft version in the existing templates is `1.20.1`.
+- Default Minecraft version in the existing templates is `1.20.1`, for neoforge is `1.20.2`.
 - Default Java image is `eclipse-temurin:17-jdk`.
