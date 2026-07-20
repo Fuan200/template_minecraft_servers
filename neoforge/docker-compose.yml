@@ -1,0 +1,21 @@
+services:
+  minecraft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: minecraft-neoforge
+    container_name: minecraft-neoforge
+    stdin_open: true
+    tty: true
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./world:/app/world
+      - ./mods:/app/mods
+      - ./config:/app/config
+      - ./server.properties:/app/server.properties
+      - ./ops.json:/app/ops.json
+      - ./whitelist.json:/app/whitelist.json
+      - ./banned-ips.json:/app/banned-ips.json
+      - ./banned-players.json:/app/banned-players.json
+      - ./user_jvm_args.txt:/app/user_jvm_args.txt
