@@ -10,7 +10,8 @@ services:
       EULA: "TRUE"
       TYPE: "VANILLA"
       VERSION: "1.20.1"
-      MEMORY: "4G"
+      INIT_MEMORY: "2G"
+      MAX_MEMORY: "4G"
     volumes:
       - ./server:/data
     restart: unless-stopped 
