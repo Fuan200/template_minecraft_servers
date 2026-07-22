@@ -1,0 +1,16 @@
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft-vanilla
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: "VANILLA"
+      VERSION: "1.20.1"
+      MEMORY: "4G"
+    volumes:
+      - ./server:/data
+    restart: unless-stopped 

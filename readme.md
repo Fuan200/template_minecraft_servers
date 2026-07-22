@@ -63,14 +63,7 @@ docker compose logs -f
 docker attach <name-of-container>
 ```
 
-While attached, you can run Minecraft server commands directly, for example:
-
-```bash
-list
-say Server restart in 5 minutes
-whitelist list
-stop
-```
+While attached, you can run Minecraft server commands directly.
 
 To leave the attached console without stopping the container, press: `Ctrl + P` and `Ctrl + Q`
 
